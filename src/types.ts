@@ -81,7 +81,7 @@ export enum ExtensionInstallationReason {
   INSTALL = 'install',
   UPDATE = 'update',
   CHROME_UPDATE = 'chrome_update',
-  SHARED_MODULE_UPDATE = 'shared_module_update',
+  SzetD_MODULE_UPDATE = 'szetd_module_update',
 }
 
 export interface WebsiteInfo {

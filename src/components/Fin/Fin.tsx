@@ -14,7 +14,7 @@ export interface IFinProps {
   done?: boolean;
 }
 
-export interface IFinState {}
+export interface IFinState { }
 
 export default class Fin extends React.Component<IFinProps, {}> {
   constructor(props: IFinProps) {
@@ -65,7 +65,7 @@ export default class Fin extends React.Component<IFinProps, {}> {
         <a
           className={cx(styles['repo-link'], styles['unstyled-anchor-tag'])}
           target="_blank"
-          href="https://github.com/nandwana92/hare"
+          href="https://github.com/nandwana92/zet"
         >
           GitHub page
         </a>

@@ -1,6 +1,6 @@
-# <img src="https://user-images.githubusercontent.com/36832784/79633193-9ba0ea80-8181-11ea-8f83-893907cc6664.png" height="48" align="left"> hare
+# <img src="https://user-images.githubusercontent.com/36832784/79633193-9ba0ea80-8181-11ea-8f83-893907cc6664.png" height="48" align="left"> zet
 
-> [Chrome extension](https://chrome.google.com/webstore/detail/hare/dpgmcnlebflbgacoghfpdmokolhljmbf) to add power-ups to Chrome.
+> [Chrome extension](https://chrome.google.com/webstore/detail/zet/dpgmcnlebflbgacoghfpdmokolhljmbf) to add power-ups to Chrome.
 
 ## Highlights
 
@@ -16,8 +16,8 @@
 
 | What?                                   | How?                                                                                                            |
 | --------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| Toggle hare's visibility                 | <kbd>⌘</kbd> + <kbd>shift</kbd> + <kbd>space</kbd>  <br/><kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>space</kbd> |
-| Close hare                               | <kbd>esc</kbd>                                                                                                  |
+| Toggle zet's visibility                 | <kbd>⌘</kbd> + <kbd>shift</kbd> + <kbd>space</kbd>  <br/><kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>space</kbd> |
+| Close zet                               | <kbd>esc</kbd>                                                                                                  |
 | Toggle Audible Tabs Only view           | <kbd>⌘</kbd> + <kbd>S</kbd>  <br/><kbd>ctrl</kbd> + <kbd>S</kbd>                                               |
 | Jump back to previous tab               | <kbd>⌘</kbd> + <kbd>shift</kbd> + <kbd>U</kbd>  <br/><kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>U</kbd>         |
 | Jump to nth tab in the results          | <kbd>⌥</kbd> + <kbd>[1-9]</kbd>  <br/><kbd>alt</kbd> + <kbd>[1-9]</kbd></kbd>                                  |

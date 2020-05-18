@@ -1,14 +1,23 @@
 {
-  "name": "hare",
+  "name": "Hare",
   "version": "0.2.0",
-  "description": "Makes searching for tabs, muting-unmuting them, etc. a joy. Supercharge your Chrome experience.",
+  "description": "Search engine for chrome tabs. Increase productivity by quickly navigating through your open tabs.",
   "manifest_version": 2,
-  "permissions": ["activeTab", "tabs"],
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
   "background": {
-    "scripts": ["dist/background.js"],
+    "scripts": [
+      "dist/background.js"
+    ],
     "persistent": false
   },
-  "web_accessible_resources": ["images/*.svg", "images/apps/*.svg", "hare.html"],
+  "web_accessible_resources": [
+    "images/*.svg",
+    "images/apps/*.svg",
+    "hare.html"
+  ],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "commands": {
     "toggle-visibility": {
@@ -16,7 +25,7 @@
         "default": "Ctrl+Shift+Space",
         "mac": "Command+Shift+Space"
       },
-      "description": "Toggle hare's visibility"
+      "description": "Toggle hares"
     },
     "jump-back-to-previous-tab": {
       "suggested_key": {

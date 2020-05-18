@@ -8,28 +8,28 @@ import ConnectedSimulateKeyPresses, {
 import { Key } from 'src/types';
 import { sleep } from 'src/utils';
 
-import styles from './OpenhareDemo.css';
+import styles from './OpenzetDemo.css';
 
-export interface IOpenhareDemoProps {
+export interface IOpenzetDemoProps {
   id?: string;
   onDone?: () => void;
   visible?: boolean;
   done?: boolean;
 }
 
-export interface IOpenhareDemoState {
+export interface IOpenzetDemoState {
   isCommandActive: boolean;
   isShiftActive: boolean;
   isSpaceActive: boolean;
 }
 
-export default class OpenhareDemo extends React.Component<
-  IOpenhareDemoProps,
-  IOpenhareDemoState
-> {
+export default class OpenzetDemo extends React.Component<
+  IOpenzetDemoProps,
+  IOpenzetDemoState
+  > {
   private simulateKeyPressesRef = createRef<SimulateKeyPresses>();
 
-  constructor(props: IOpenhareDemoProps) {
+  constructor(props: IOpenzetDemoProps) {
     super(props);
 
     this.state = {
@@ -47,7 +47,7 @@ export default class OpenhareDemo extends React.Component<
     }
   }
 
-  componentDidUpdate(prevProps: IOpenhareDemoProps) {
+  componentDidUpdate(prevProps: IOpenzetDemoProps) {
     const { visible = true } = this.props;
     const { visible: prevPropsVisible = true } = prevProps;
 
@@ -62,12 +62,12 @@ export default class OpenhareDemo extends React.Component<
   }
 
   public render() {
-    const { visible, id = 'open-hare-demo', onDone } = this.props;
+    const { visible, id = 'open-zet-demo', onDone } = this.props;
 
     return (
       <div
         id={id}
-        className={cx(styles['open-hare-demo'], {
+        className={cx(styles['open-zet-demo'], {
           [styles['visible']]: visible,
         })}
       >
