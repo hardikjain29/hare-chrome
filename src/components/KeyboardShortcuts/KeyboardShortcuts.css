@@ -1,0 +1,43 @@
+.keyboard-shortcuts {
+  position: relative;
+
+  .illustration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 256px;
+    opacity: 0.02;
+    transform: rotate(-20deg);
+    pointer-events: none;
+  }
+
+  table {
+    margin-top: 12px;
+    font-size: 14px;
+
+    td {
+      color: white;
+    }
+
+    .list-item {
+      td {
+        padding: 10px;
+        border-radius: 4px;
+      }
+
+      &:nth-child(odd) {
+        td {
+          background-color: none;
+        }
+      }
+    }
+  }
+}
+
+
+.close-shortcuts-menu {
+  position: absolute;
+  cursor: pointer;
+  right: 0px;
+  top: -40px;
+}

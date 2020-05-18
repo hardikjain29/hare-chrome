@@ -1,0 +1,43 @@
+{
+  "name": "hare",
+  "version": "0.2.0",
+  "description": "Makes searching for tabs, muting-unmuting them, etc. a joy. Supercharge your Chrome experience.",
+  "manifest_version": 2,
+  "permissions": ["activeTab", "tabs"],
+  "background": {
+    "scripts": ["dist/background.js"],
+    "persistent": false
+  },
+  "web_accessible_resources": ["images/*.svg", "images/apps/*.svg", "hare.html"],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "commands": {
+    "toggle-visibility": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Space",
+        "mac": "Command+Shift+Space"
+      },
+      "description": "Toggle hare's visibility"
+    },
+    "jump-back-to-previous-tab": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+U",
+        "mac": "Command+Shift+U"
+      },
+      "description": "Jump back to previous tab"
+    }
+  },
+  "icons": {
+    "16": "images/logo/bolt16.png",
+    "48": "images/logo/bolt48.png",
+    "128": "images/logo/bolt128.png"
+  },
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/logo/bolt16.png",
+      "32": "images/logo/bolt32.png",
+      "48": "images/logo/bolt48.png",
+      "128": "images/logo/bolt128.png"
+    }
+  }
+}

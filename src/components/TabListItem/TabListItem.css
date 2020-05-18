@@ -1,0 +1,200 @@
+.tab-list-item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  position: relative;
+
+  button {
+    all: unset;
+  }
+
+  .toggle-mute-button {
+    position: absolute;
+    left: -40px;
+    cursor: pointer;
+    margin-right: 12px;
+    transition-property: transform;
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    transform: scale(1);
+
+    &:active {
+      transform: scale(0.9);
+    }
+
+    .list-item-icon-container {
+      padding: 5px;
+      box-sizing: content-box;
+      height: 18px;
+      width: 18px;
+      display: flex;
+      align-items: center;
+      border: 2px solid #ffffff;
+      border-radius: 8px;
+      background-color: #ffffff;
+      transition-property: background-color border;
+      transition-duration: 0.2s;
+      transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+      transform: scale(1);
+      
+      .list-item-icon {
+        height: 18px;
+      }
+    }
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    flex: auto;
+    overflow: hidden;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 40px;
+    border-radius: 8px;
+    color: white !important;
+    background-color: none;
+    border: none;
+    transform: scale(1);
+    transition-property: transform border;
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  
+    &:active {
+      /*
+          Commenting out this styling for now as the parent element is also
+          becoming active when the child element is active. Because of this
+          even the parent element is scaling which isn't desired. This can
+          possibly be solved using JS. TODO: Explore the JS fix for this.
+
+          transform: scale(0.99);            
+        */
+    }
+
+    .title-and-url-container {
+      flex: auto;
+      overflow: hidden;
+
+      .highlight {
+        font-weight: 700;
+      }
+
+      .tab-url {
+        font-size: 12px;
+        margin-top: 4px;
+        color: #388E3C;
+      }
+    }
+
+    .website-icon {
+      height: 32px;
+      width: 32px;
+      margin-right: 12px;
+      border: 1px solid #ebebeb;
+      padding: 8px;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background: #fafafa;
+    }
+  }
+
+  &:nth-child(odd) {
+    a {
+
+      &:focus {
+      }
+    }
+
+    button .list-item-icon-container {
+      border: 2px solid #f8f8f8;
+      background-color: #f8f8f8;
+    }
+
+    button:hover .list-item-icon-container {
+      border: 2px solid #428dff;
+      background-color: #e8e8e8;
+    }
+
+    button:focus .list-item-icon-container {
+      border: 2px solid #428dff;
+    }
+  }
+
+  &:nth-child(even) {
+
+    button:hover .list-item-icon-container {
+      border: 2px solid #428dff;
+      background-color: #e8e8e8;
+    }
+
+    button:focus .list-item-icon-container {
+      border: 2px solid #428dff;
+    }
+  }
+    .tab-checkbox {
+      display: none;
+      background: #5B5867;
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      position: absolute;
+      right: 96.5%;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 100000;
+
+    }
+
+    .tab-checkbox-selected {
+      display: flex !important;
+      background: #7059FF;
+        &:after {
+          content: '✓';
+          width: 14px;
+          height: 18px;
+          font-size: 16px;
+          position: absolute;
+          color: white;
+          font-family: "Graphik", "SF Pro", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+    }
+
+    &:hover {
+      a {
+
+      }
+    .tab-checkbox {
+      display: flex;
+    }
+  }
+}
+
+.unstyled-anchor-tag {
+  &:link,
+  &:visited {
+    text-decoration: inherit;
+    color: #212121;
+    cursor: auto;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.anchor-tag-pointer-cursor {
+  &:link,
+  &:visited {
+    cursor: pointer;
+  }
+}
+
+.truncate-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+

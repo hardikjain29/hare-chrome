@@ -1,0 +1,211 @@
+body {
+  margin: 0;
+  font-family: "Graphik", "SF Pro", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* TODO: Get rid of the important here. */
+input {
+  font-family: "Graphik", "SF Pro", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.container {
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+
+  &.full-screen-mode {
+    position: fixed;
+    z-index: 2147483647;
+    display: flex;
+    justify-content: center;
+    padding-top: 128px;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+
+    .popup {
+      width: 800px;
+      max-width: 90vw;
+    }
+    .popup-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .author {
+      display: inline-block;
+      padding: 4px 8px;
+      margin-top: 12px;
+      color: white;
+      font-size: 12px;
+      font-weight: 500;
+      background: #1DA1F2;
+      border-radius: 20px;
+      text-decoration: none;
+      text-transform: capitalize;
+      &:hover {
+        background: rgb(17, 147, 228);
+        transition: all 0.2s ease-in;
+      }
+    }
+    &.visible {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &.embed {
+    width: 50vw;
+
+    .popup {
+      max-width: 90%;
+    }
+  }
+
+  &.visible {
+    .popup {
+      opacity: 1;
+    }
+  }
+
+  .popup {
+    align-self: flex-start;
+    box-shadow: 20px 36px 36px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    border: none;
+    background-color: #ffffff;
+    padding: 12px;
+
+    overflow: hidden;
+    flex-direction: column;
+    background-color: rgba(29, 27, 38, 0.85);
+    opacity: 0.75;
+    -webkit-box-align: center;
+    align-items: center;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+    border-bottom: none;
+    transition: border-bottom 150ms ease 0s, top 250ms ease 0s, background-color 300ms ease 0s;
+    box-shadow: 40px 56px 80px rgba(0,0,0,0.5);
+    .results-section-visible {
+      border-bottom: 1px solid rgba(22, 22, 26, 0.5);
+      padding-bottom: 12px;
+    }
+  }
+}
+
+.unstyled-anchor-tag {
+  &:link,
+  &:visited {
+    text-decoration: inherit;
+    color: #212121;
+    cursor: auto;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.truncate-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+kbd {
+  display: inline-block;
+  border-radius: 4px;
+  padding: 0.1em 0.5em;
+  margin: 0 0.2em;
+  background-color: #121212;
+  color: #B9B9B9;
+}
+
+.multiple-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(29, 27, 38, 0.95);
+  padding-top: 12px;
+}
+.actions-info {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5em;
+  color: #dadfe7;
+  opacity: 0.5;
+}
+
+.multiple-actions-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab-close-button {
+  outline: none;
+  display: flex;
+  flex-direction: row;
+  padding: 12px 18px;
+  
+  background: linear-gradient(102deg,#4551b5 9.16%,#5643cc 32.02%,#543fd7 64.72%);
+  border-radius: 4px;
+  text-transform: capitalize;
+  left: 9px;
+  top: 6px;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 15px;
+  /* identical to box height */
+  
+  text-align: center;
+  letter-spacing: -0.25px;
+  margin: 0 !important;
+  color: #FFFFFF;
+  
+  
+  /* Inside Auto Layout */
+  
+  flex: none;
+  order: 0;
+  align-self: center;
+  margin: 10px 0px;
+  cursor: pointer;
+}
+
+.popup-title {
+  font-size: 24px !important;
+  color: #fff !important;
+  font-weight: 400 !important;
+  letter-spacing: .0175rem !important;
+  line-height: 120% !important;
+  text-align: left !important;
+  padding-left: 12px;
+}
+
+.extension-actions {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.extension-actions-shortcut {
+  cursor: pointer;
+  display: inline-block;
+  padding: 4px 8px;
+  margin-top: 12px;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  background: #282828;
+  border-radius: 20px;
+  text-decoration: none;
+  margin-right: 8px;
+
+  &:hover {
+    background: #121212;
+  }
+
+}
