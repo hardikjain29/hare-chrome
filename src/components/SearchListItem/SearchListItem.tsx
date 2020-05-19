@@ -14,7 +14,7 @@ import {
 import { IAppState } from 'src/types';
 import { keyLabels, ModifierKey, iconUrls } from 'src/constants';
 
-import styles from './TabListItem.css';
+import styles from './SearchListItem.css';
 
 const mapState = (state: IAppState) => ({
   platformInfo: state.platformInfo,
@@ -24,7 +24,7 @@ const connector = connect(mapState);
 
 type PropsFromRedux = ConnectedProps<typeof connector>;
 
-export interface ITabListItemProps {
+export interface ISearchListItemProps {
   tabFuseResult: Fuse.FuseResult<chrome.tabs.Tab>;
   isHighlighted: boolean;
   containerRef: React.RefObject<HTMLElement>;
@@ -34,11 +34,11 @@ export interface ITabListItemProps {
   className?: string;
 }
 
-export interface ITabListItemState { }
+export interface ISearchListItemState { }
 
-type TAllProps = PropsFromRedux & ITabListItemProps;
+type TAllProps = PropsFromRedux & ISearchListItemProps;
 
-export class TabListItem extends React.Component<TAllProps, ITabListItemState> {
+export class SearchListItem extends React.Component<TAllProps, ISearchListItemState> {
   private liElementRef = createRef<HTMLLIElement>();
 
   constructor(props: TAllProps) {
@@ -151,7 +151,7 @@ export class TabListItem extends React.Component<TAllProps, ITabListItemState> {
 
     return (
       <li
-        className={cx(styles['tab-list-item'], 'tab-list-item')}
+        className={cx(styles['search-list-item'], 'search-list-item')}
         ref={this.liElementRef}
       >
         <span className={cx([
@@ -209,4 +209,4 @@ export class TabListItem extends React.Component<TAllProps, ITabListItemState> {
   }
 }
 
-export default connector(TabListItem);
+export default connector(SearchListItem);

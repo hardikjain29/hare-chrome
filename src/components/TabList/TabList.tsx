@@ -10,7 +10,7 @@ import {
   handleToggleMuteButtonClick,
 } from 'src/utils';
 import { mousetrapKeyMappings, ModifierKey, OS, iconUrls } from 'src/constants';
-import TabListItem from 'src/components/TabListItem/TabListItem';
+import SearchListItem from 'src/components/SearchListItem/SearchListItem';
 import { IAppState } from 'src/types';
 
 import styles from './TabList.css';
@@ -223,7 +223,7 @@ export class TabList extends React.Component<TAllProps, ITabListState> {
         {tabs.map((tab, index) => {
           const isSelected = multipleHighlights.find((highlight) => highlight === tab.item.id);
           return (
-            <TabListItem
+            <SearchListItem
               className={cx({
                 [styles['highlighted']]: !multipleHighlights.length ? highlightedItemIndex === index : isSelected,
               })}
@@ -247,7 +247,7 @@ export class TabList extends React.Component<TAllProps, ITabListState> {
               const indexWithOffet = index + recentlyAudibleTabsIndexOffset;
 
               return (
-                <TabListItem
+                <SearchListItem
                   className={cx({
                     [styles['highlighted']]:
                       highlightedItemIndex === indexWithOffet,

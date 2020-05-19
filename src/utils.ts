@@ -161,13 +161,13 @@ function getInitialReduxState(
   // arrow. So inverting up arrow as a workaround 🤷🏼‍♂️.
   const keyboardShortcuts = [
     {
-      label: `Toggle Dig`,
+      label: `Toggle hare`,
       shortcut: `<kbd>${
         keyLabels[ModifierKey.META][os]
         }</kbd>+<kbd>shift</kbd>+<kbd>space</kbd>`,
     },
     {
-      label: `Close Dig`,
+      label: `Close hare`,
       shortcut: `<kbd>esc</kbd>`,
     },
     {
@@ -190,7 +190,7 @@ function getInitialReduxState(
     // },
     {
       label: `Browse search list`,
-      shortcut: `<kbd><span>▲<span></kbd> / <kbd><span style="transform: rotate(180deg); display: flex;">▲<span></kbd>`,
+      shortcut: `Up arrow <kbd><span>↑<span></kbd> & down arrow <kbd><span>↓<span></kbd>`,
     },
     {
       label: `Open highlighted tab`,

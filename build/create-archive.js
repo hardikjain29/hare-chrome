@@ -6,7 +6,7 @@ const path = require('path');
 const listOfDirectories = ['dist', 'images'];
 const listOfFiles = [
   'manifest.json',
-  'how-to-use.html',
+  'usage.html',
   'popup.html',
   'hare.html',
 ];

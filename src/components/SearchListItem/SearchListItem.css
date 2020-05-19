@@ -1,4 +1,4 @@
-.tab-list-item {
+.search-list-item {
   display: flex;
   align-items: center;
   font-size: 14px;
@@ -195,6 +195,3 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-
-

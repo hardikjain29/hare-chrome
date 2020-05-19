@@ -10,9 +10,13 @@ import OpenzetDemo from 'src/components/OpenzetDemo/OpenzetDemo';
 import OpenWebsitesInBackground from 'src/components/OpenWebsitesInBackground/OpenWebsitesInBackground';
 import Root from 'src/components/Root/Root';
 import { iconUrls } from 'src/constants';
+import {
+  dispatchToggleVisibilityAction,
+} from 'src/utils';
 import { ISectionComponentWithProps } from 'src/types';
 
 import styles from './Guide.css';
+import KeyboardShortcuts from 'src/components/KeyboardShortcuts/KeyboardShortcuts';
 
 const sectionComponents: ISectionComponentWithProps[] = [
   {
@@ -140,8 +144,15 @@ export default class Guide extends React.Component<IGuideProps, IGuideState> {
 
     return (
       <div className={styles['guide']}>
-        <h1>How to use this extension 🤔</h1>
-        <div className={styles['sections-container']}>
+        <img className={styles['guide-logo']} src={'../../images/logo/hare@3x.png'} alt="logo" />
+        <h1>Thank you for installing <a href="https://tabhare.com">hare!</a> 😁</h1>
+        <div className={styles['guide-body']}>
+          <h2 className={styles['guide-headline']}>Get Started by pressing <span>⌘ command/ctrl</span> + <span>⇧ shift</span> + <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18 9v4H6V9H4v6h16V9z" fill="#fff" /></svg>&nbsp;space</span> while you are on any tab.</h2>
+          <h3>Other Keyboard Shortcuts</h3>
+          <KeyboardShortcuts />
+          {/* <button onClick={dispatchToggleVisibilityAction}>Open hare</button> */}
+        </div>
+        {/* <div className={styles['sections-container']}>
           <div className={styles['left']}>
             {sectionComponents.map((item, index) => {
               const { component: Component, props } = item;
@@ -211,7 +222,7 @@ export default class Guide extends React.Component<IGuideProps, IGuideState> {
               <Root isEmbedded={true} />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }
