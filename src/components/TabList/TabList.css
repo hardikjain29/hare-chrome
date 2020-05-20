@@ -7,7 +7,7 @@
   /* I haven't found a clean way to override the styling of a child component
   from the parent yet. Using !important for now. I apologize. 😅 */
   .highlighted {
-    background: rgba(22, 22, 26, 0.3);
+    background: rgba(22, 22, 26, 0.7);
   }
 
   .recently-audible-section-title-container {
