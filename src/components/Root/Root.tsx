@@ -19,6 +19,9 @@ import {
   ActionTypes,
   AUDIBLE_TABS_POLL_FREQUENCY_IN_MS,
   consoleCommands,
+  mousetrapKeyMappings,
+  ModifierKey,
+  keyLabels
 } from 'src/constants';
 
 import styles from './Root.css';
@@ -26,6 +29,7 @@ import styles from './Root.css';
 const mapState = (state: IAppState) => ({
   showAudibleTabsOnly: state.showAudibleTabsOnly,
   isChromeOnSteroidsVisible: state.isChromeOnSteroidsVisible,
+  platformInfo: state.platformInfo,
 });
 
 const mapDispatch = {
@@ -138,9 +142,14 @@ export class Root extends React.Component<TAllProps, IRootState> {
   };
 
   private registerListeners() {
+    const { platformInfo: { os } } = this.props;
     Mousetrap.bind('esc', () => {
       dispatchToggleVisibilityAction();
     });
+
+    // Shortcut for listing keyboard shortcuts
+    const key = `${mousetrapKeyMappings[ModifierKey.ALT][os]}+k`;
+    Mousetrap.bind(key, this.toggleShotcuts);
 
     chrome.runtime.onMessage.addListener((request) => {
       const { type } = request;
@@ -332,10 +341,11 @@ export class Root extends React.Component<TAllProps, IRootState> {
   }
 
   public render() {
-    const { multipleHighlights, showShortcuts } = this.state;
-    const { isChromeOnSteroidsVisible, isEmbedded = false } = this.props;
+    const { multipleHighlights, showShortcuts, searchInputValue = '' } = this.state;
+    const { isChromeOnSteroidsVisible, isEmbedded = false, platformInfo: { os } } = this.props;
     const resultsComponent = this.getResultsComponent();
     const resultsSectionVisible = resultsComponent !== null;
+    const shortcutString = `${keyLabels[ModifierKey.ALT][os]} + k`
 
     return (
       <div
@@ -365,6 +375,7 @@ export class Root extends React.Component<TAllProps, IRootState> {
                       [styles['results-section-visible']]: resultsSectionVisible,
                     })}
                     onSearchBoxInputChange={this.onSearchBoxInputChange}
+                    defaultSearchInputValue={searchInputValue}
                   />
                   {resultsComponent}
                   {
@@ -394,7 +405,7 @@ export class Root extends React.Component<TAllProps, IRootState> {
             }
           </div>
           <div className={styles['extension-actions']}>
-            <div onClick={this.toggleShotcuts} className={styles['extension-actions-shortcut']}> Toggle shortcuts</div>
+            <div onClick={this.toggleShotcuts} className={styles['extension-actions-shortcut']}> Toggle shortcuts ({shortcutString})</div>
             <a href="https://twitter.com/hardikjain29" target="_blank" className={styles['author']}>made by Hardik</a>
           </div>
         </div>

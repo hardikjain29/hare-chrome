@@ -55,8 +55,12 @@ export class SearchBox extends React.Component<TAllProps, ISearchBoxState> {
     }
 
     this.state = {
-      searchInputValue: '',
+      searchInputValue: props.defaultSearchInputValue || '',
     };
+  }
+
+  componentDidMount() {
+    this.focusInput();
   }
 
   componentDidUpdate(prevProps: TAllProps) {
