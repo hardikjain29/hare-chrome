@@ -1,7 +1,7 @@
 {
-  "name": "Hare",
+  "name": "Hare – Beautiful tab manager for chrome",
   "version": "1.0.0",
-  "description": "Search engine for chrome tabs. Increase productivity by quickly navigating through your open tabs.",
+  "description": "Search engine for chrome tabs. Increase productivity by quickly navigating through your open tabs.Spotlight for chrome tabs.",
   "manifest_version": 2,
   "permissions": [
     "activeTab",
