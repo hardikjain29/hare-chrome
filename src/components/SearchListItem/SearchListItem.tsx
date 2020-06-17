@@ -97,7 +97,6 @@ export class SearchListItem extends React.Component<TAllProps, ISearchListItemSt
 
     if (event.shiftKey) {
       event.preventDefault();
-      console.log(id);
       toggleMultipleHighLights(id);
     } else {
       jumpToTab(id, windowId);

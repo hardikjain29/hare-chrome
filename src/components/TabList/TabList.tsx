@@ -82,6 +82,26 @@ export class TabList extends React.Component<TAllProps, ITabListState> {
     }
   }
 
+  selectNextHighlightedForMultiple = () => {
+    const { toggleMultipleHighLights } = this.props;
+    const { item } = this.getListItemAtIndex(this.state.highlightedItemIndex);
+    toggleMultipleHighLights(item.id);
+    this.highlightNextItem();
+  }
+
+  selectPreviousHighlightedForMultiple = async () => {
+    const { toggleMultipleHighLights } = this.props;
+    await this.highlightPrevousItem();
+    const { item } = this.getListItemAtIndex(this.state.highlightedItemIndex);
+    toggleMultipleHighLights(item.id);
+  }
+
+  selectCurrentHighlightedForMultiple = async () => {
+    const { toggleMultipleHighLights } = this.props;
+    const { item } = this.getListItemAtIndex(this.state.highlightedItemIndex);
+    toggleMultipleHighLights(item.id);
+  }
+
   private registerKeyListeners() {
     const { platformInfo } = this.props;
     const { os } = platformInfo;
@@ -106,11 +126,20 @@ export class TabList extends React.Component<TAllProps, ITabListState> {
       this.highlightPrevousItem();
     });
 
-    // Mousetrap.bind('shift+down', (e: ExtendedKeyboardEvent, combo: string) => {
-    //   e.preventDefault();
-    //   console.log('down');
-    //   this.highlightPrevousItem();
-    // });
+    Mousetrap.bind(`${mousetrapKeyMappings[ModifierKey.ALT][os]}+s`, (e: ExtendedKeyboardEvent, combo: string) => {
+      e.preventDefault();
+      this.selectCurrentHighlightedForMultiple();
+    });
+
+    Mousetrap.bind('shift+down', (e: ExtendedKeyboardEvent, combo: string) => {
+      e.preventDefault();
+      this.selectNextHighlightedForMultiple();
+    });
+
+    Mousetrap.bind('shift+up', (e: ExtendedKeyboardEvent, combo: string) => {
+      e.preventDefault();
+      this.selectPreviousHighlightedForMultiple();
+    });
 
     Mousetrap.bind('enter', (e: ExtendedKeyboardEvent, combo: string) => {
       e.preventDefault();
@@ -198,11 +227,15 @@ export class TabList extends React.Component<TAllProps, ITabListState> {
   private highlightPrevousItem = () => {
     const { highlightedItemIndex } = this.state;
 
-    if (highlightedItemIndex - 1 > -1) {
-      this.setState({
-        highlightedItemIndex: highlightedItemIndex - 1,
-      });
-    }
+    return new Promise((resolve, reject) => {
+      if (highlightedItemIndex - 1 > -1) {
+        this.setState({
+          highlightedItemIndex: highlightedItemIndex - 1,
+        }, resolve);
+      } else {
+        reject();
+      }
+    });
   };
 
   private getUrl(tab: chrome.tabs.Tab): string | undefined {
@@ -225,7 +258,7 @@ export class TabList extends React.Component<TAllProps, ITabListState> {
           return (
             <SearchListItem
               className={cx({
-                [styles['highlighted']]: !multipleHighlights.length ? highlightedItemIndex === index : isSelected,
+                [styles['highlighted']]: highlightedItemIndex === index,
               })}
               containerRef={this.ulElementRef}
               index={index}
