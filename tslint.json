@@ -1,6 +1,8 @@
 {
-  "defaultSeverity": "error",
-  "extends": ["tslint:recommended"],
+  "defaultSeverity": "warning",
+  "extends": [
+    "tslint:recommended"
+  ],
   "jsRules": {},
   "rules": {
     "no-string-literal": false,
