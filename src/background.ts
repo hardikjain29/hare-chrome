@@ -37,6 +37,8 @@ let currentlyFocussedRealWindowId: number | null = null;
 
 const mapOfRecentlyAudibleTabs: Record<number, RecentlyAudibleTab> = {};
 
+chrome.browserAction.onClicked.addListener(injectContentScriptInActiveTab);
+
 chrome.commands.onCommand.addListener((command) => {
   switch (command) {
     case KeyboardShortcuts.TOGGLE_VISIBILITY: {
