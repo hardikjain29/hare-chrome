@@ -8,6 +8,7 @@ import {
   jumpToTab,
   dispatchToggleVisibilityAction,
   handleToggleMuteButtonClick,
+  closeTab,
 } from 'src/utils';
 import { mousetrapKeyMappings, ModifierKey, OS, iconUrls } from 'src/constants';
 import SearchListItem from 'src/components/SearchListItem/SearchListItem';
@@ -53,9 +54,9 @@ export class TabList extends React.Component<TAllProps, ITabListState> {
 
   componentDidUpdate(prevProps: TAllProps) {
     if (prevProps.tabs.length !== this.props.tabs.length) {
-      this.setState({
-        highlightedItemIndex: 0,
-      });
+      // this.setState({
+      //   highlightedItemIndex: 0,
+      // });
     }
 
     if (
@@ -102,6 +103,19 @@ export class TabList extends React.Component<TAllProps, ITabListState> {
     toggleMultipleHighLights(item.id);
   }
 
+  closeSingleTab = () => {
+    const { highlightedItemIndex } = this.state;
+    const { getTabs } = this.props;
+
+    const { item } = this.getListItemAtIndex(highlightedItemIndex);
+
+    closeTab(item.id, () => {
+      setTimeout(() => {
+        getTabs();
+      }, 100);
+    });
+  }
+
   private registerKeyListeners() {
     const { platformInfo } = this.props;
     const { os } = platformInfo;
@@ -129,6 +143,11 @@ export class TabList extends React.Component<TAllProps, ITabListState> {
     Mousetrap.bind(`${mousetrapKeyMappings[ModifierKey.ALT][os]}+s`, (e: ExtendedKeyboardEvent, combo: string) => {
       e.preventDefault();
       this.selectCurrentHighlightedForMultiple();
+    });
+
+    Mousetrap.bind(`${mousetrapKeyMappings[ModifierKey.ALT][os]}+c`, (e: ExtendedKeyboardEvent, combo: string) => {
+      e.preventDefault();
+      this.closeSingleTab();
     });
 
     Mousetrap.bind('shift+down', (e: ExtendedKeyboardEvent, combo: string) => {

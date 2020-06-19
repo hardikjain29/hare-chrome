@@ -147,7 +147,7 @@ export class Root extends React.Component<TAllProps, IRootState> {
       dispatchToggleVisibilityAction();
     });
 
-    Mousetrap.bind(`${mousetrapKeyMappings[ModifierKey.ALT][os]}+c`, (e) => {
+    Mousetrap.bind(`${mousetrapKeyMappings[ModifierKey.ALT][os]}+x`, (e) => {
       e.preventDefault();
       this.onClearClicked();
     });
@@ -336,6 +336,7 @@ export class Root extends React.Component<TAllProps, IRootState> {
         <TabList
           tabs={filteredTabs}
           multipleHighlights={multipleHighlights}
+          getTabs={this.getTabs}
           toggleMultipleHighLights={this.toggleMultipleHighLights}
           recentlyAudibleTabs={filteredRecentlyAudibleTabs}
         />
