@@ -1,5 +1,4 @@
 import { ActionTypes, iframeUrl } from 'src/constants';
-
 import styles from './contentScript.css';
 
 class ChromeOnSteroids {

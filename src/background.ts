@@ -96,8 +96,6 @@ function injectContentScriptInTab(tab: chrome.tabs.Tab) {
       chrome.tabs.remove(id);
 
       return;
-    } else if (originPlusPathname === howToUsePageUrl) {
-      return;
     }
   }
 

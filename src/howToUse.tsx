@@ -45,7 +45,6 @@ class Main {
         case ActionTypes.GET_PLATFORM_INFO_SUCCESS: {
           const { data: platformInfo } = request;
           this.mountReact(platformInfo);
-
           break;
         }
       }
