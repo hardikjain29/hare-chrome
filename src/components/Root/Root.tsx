@@ -147,6 +147,11 @@ export class Root extends React.Component<TAllProps, IRootState> {
       dispatchToggleVisibilityAction();
     });
 
+    Mousetrap.bind(`${mousetrapKeyMappings[ModifierKey.ALT][os]}+c`, (e) => {
+      e.preventDefault();
+      this.onClearClicked();
+    });
+
     // Shortcut for listing keyboard shortcuts
     const key = `${mousetrapKeyMappings[ModifierKey.ALT][os]}+k`;
     Mousetrap.bind(key, this.toggleShotcuts);
@@ -340,6 +345,10 @@ export class Root extends React.Component<TAllProps, IRootState> {
     }
   }
 
+  private onClearClicked = () => {
+    this.setState({ multipleHighlights: [] });
+  }
+
   public render() {
     const { multipleHighlights, showShortcuts, searchInputValue = '' } = this.state;
     const { isChromeOnSteroidsVisible, isEmbedded = false, platformInfo: { os } } = this.props;
@@ -386,7 +395,16 @@ export class Root extends React.Component<TAllProps, IRootState> {
                           [styles['multiple-section-visible']]: multipleHighlights.length,
                         }
                       ])}>
-                        <div className={styles['actions-info']}>{multipleHighlights.length} tabs selected</div>
+                        <div className={styles['tabs-selection-container']}>
+                          <div className={styles['actions-info']}>{multipleHighlights.length} tabs selected</div>
+                          <div className={styles['clear-container']} onClick={this.onClearClicked}>
+                            <div className={styles['clear']}><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M10.1854 10.8146L11.1283 9.87174L22.442 21.1854L21.4992 22.1283L10.1854 10.8146Z" fill="#C4C4C4" />
+                              <path d="M11.1283 22.1283L10.1854 21.1854L21.4992 9.87174L22.442 10.8145L11.1283 22.1283Z" fill="#C4C4C4" />
+                            </svg></div>
+                            <div className={styles['clear-text']}>Clear</div>
+                          </div>
+                        </div>
                         <div>
                           <div className={styles['multiple-actions-container']}>
                             <div className={styles['tab-close-button']} onClick={this.handleTabClose}>close tabs</div>
