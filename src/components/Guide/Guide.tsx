@@ -151,6 +151,7 @@ export default class Guide extends React.Component<IGuideProps, IGuideState> {
           <h3>Other Keyboard Shortcuts</h3>
           <KeyboardShortcuts />
           {/* <button onClick={dispatchToggleVisibilityAction}>Open hare</button> */}
+          <div className={styles['privacy']}>Privacy: Your privacy is critically important to us. We don't have any server or any database. Hence, we don't store any information, any where. The extension runs completely on your browser. The extension passes through a review check for these and is only then published.</div>
         </div>
         {/* <div className={styles['sections-container']}>
           <div className={styles['left']}>

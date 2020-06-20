@@ -161,6 +161,11 @@ a:visited {
   }
 }
 
+.privacy {
+  position: fixed;
+  bottom: 24px;
+}
+
 @keyframes pulse {
   0% {
     border-color: #f8f8f8;
