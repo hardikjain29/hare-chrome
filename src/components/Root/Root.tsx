@@ -6,6 +6,7 @@ import Fuse from 'fuse.js';
 import KeyboardShortcuts from 'src/components/KeyboardShortcuts/KeyboardShortcuts';
 import NoResults from 'src/components/NoResults/NoResults';
 import TabList from 'src/components/TabList/TabList';
+import Mousetrap from 'mousetrap';
 import SearchBox from 'src/components/SearchBox/SearchBox';
 import { updateIsChromeOnSteroidsVisibleFlagValue } from 'src/actions';
 import { IAppState, ModeTypes } from 'src/types';
@@ -342,7 +343,7 @@ export class Root extends React.Component<TAllProps, IRootState> {
         />
       ) : areFiltersApplied ? (
         <NoResults modeType={modeType} />
-      ) : null;
+      ) : new Array(5).fill(1).map(() => <div className={cx([styles['animatedBackground'], styles['contentPlaceholder']])} />);
     }
   }
 

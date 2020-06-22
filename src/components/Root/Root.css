@@ -18,6 +18,37 @@ input {
   margin-top: -4px;
 }
 
+@keyframes placeHolderShimmer{
+  0%{
+    background-position: -468px 0
+  }
+  100%{
+    background-position: 468px 0
+  }
+}
+
+.animatedBackground {
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: #f6f7f8;
+  background: linear-gradient(to right, #16161a 8%, #252538 18%, #16161a 33%);
+  background-size: 1800px 110px;
+  position: relative;
+  margin: 15px;
+  margin-top: 0px;
+  transform: translateY(75%);
+}  
+.contentPlaceholder{
+  height: 48px;
+}
+.backgroundMasker {
+  background: #fff;
+  position: absolute;
+}
+
 .clear {
   background: transparent;
   border: 1px solid rgb(106, 106, 121);
