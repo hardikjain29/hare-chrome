@@ -382,6 +382,8 @@ chrome.runtime.onInstalled.addListener((details) => {
   }
 });
 
+chrome.runtime.setUninstallURL('https://tabhare.com/uninstall.html');
+
 function openUrlsInNewTabsInBackground(listOfUrls: string[]) {
   const tabCreationPromises: Promise<chrome.tabs.Tab>[] = [];
 
