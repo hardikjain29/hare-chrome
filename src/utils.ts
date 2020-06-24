@@ -197,8 +197,36 @@ function getInitialReduxState(
       shortcut: `<kbd>${keyLabels[ModifierKey.ENTER][os]}</kbd>`,
     },
     {
-      label: `Select Multiple on list`,
+      label: `Close highlighted tab`,
+      shortcut: `<kbd>${
+        keyLabels[ModifierKey.ALT][os]
+        }</kbd>+<kbd>c</kbd>`,
+    },
+    {
+      label: `Select Multiple on list from mouse`,
       shortcut: `<kbd>shift</kbd>+<kbd>click</kbd>`,
+    },
+    {
+      label: `Select Multiple on list from keyboard`,
+      shortcut: `<kbd>shift</kbd>+<kbd>down arrow<kbd><span>↓<span></kbd></kbd> OR <kbd>shift</kbd>+<kbd>Up arrow<kbd><span>↑<span></kbd></kbd>`,
+    },
+    {
+      label: `Toggle highlighted tab for selection/unselection`,
+      shortcut: `<kbd>${
+        keyLabels[ModifierKey.ALT][os]
+        }</kbd>+<kbd>s</kbd>`,
+    },
+    {
+      label: `Clear all Selection`,
+      shortcut: `<kbd>${
+        keyLabels[ModifierKey.ALT][os]
+        }</kbd>+<kbd>x</kbd>`,
+    },
+    {
+      label: `Toggle Keyboard shortcuts`,
+      shortcut: `<kbd>${
+        keyLabels[ModifierKey.ALT][os]
+        }</kbd>+<kbd>k</kbd>`,
     },
   ];
 
