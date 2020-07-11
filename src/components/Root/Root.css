@@ -108,7 +108,7 @@ input {
     z-index: 2147483647;
     display: flex;
     justify-content: center;
-    padding-top: 200px;
+    padding-top: 12%;
     width: 100vw;
     height: 100vh;
     background-color: transparent;
@@ -157,6 +157,11 @@ input {
     .popup {
       opacity: 1;
     }
+  }
+
+  .keyboard-popup {
+    height: 50vh;
+    overflow-y: scroll !important;
   }
 
   .popup {

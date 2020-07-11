@@ -377,7 +377,13 @@ export class Root extends React.Component<TAllProps, IRootState> {
         }}
       >
         <div className={styles['popup-container']}>
-          <div className={styles['popup']}>
+          <div className={cx([
+            styles['popup'],
+            {
+              [styles['keyboard-popup']]: showShortcuts,
+            }
+          ])}
+          >
             {
               !showShortcuts ? (
                 <>

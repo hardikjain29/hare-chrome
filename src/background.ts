@@ -115,7 +115,7 @@ function injectContentScriptInTab(tab: chrome.tabs.Tab) {
 
       // If there was an error thrown by this script, it's assumed that it's
       // because of an attemp to inject script on an disallowed tab.
-      if (typeof error !== 'undefined') {
+      if (typeof error !== 'undefined' && error !== null) {
         const { index } = tab;
 
         chrome.tabs.create({
