@@ -1,6 +1,6 @@
 {
   "name": "Hare – Beautiful tab manager for chrome",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Search engine for chrome tabs. Increase productivity by quickly navigating through your open tabs. MacOs Spotlight for chrome tabs.",
   "manifest_version": 2,
   "permissions": [
