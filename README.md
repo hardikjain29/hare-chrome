@@ -66,10 +66,6 @@ For development
 1) `npm install`
 2) `npm run watch` This will keep the files in _dist_ directory updated.
 
-To simply build the project: 
-1) Run npm run build in the root directory.
-2) The build will show failed due to issues with typescript linting but it has succeded. To verify this you can go to the dist folder, where you will see that any changes that you made have been outputted to the dist folder by running the command.
-
 To build it for adding it to the firefox:
-1) npm run build – Even if it fails it has built and kept in dist
+1) npm run build
 2) Run command `node build/create-archive.js`, this will output a zip file in the `chrome-extension-archive` folder which can be used to add to the firefox.
