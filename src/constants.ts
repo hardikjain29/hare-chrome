@@ -74,6 +74,8 @@ export const mousetrapKeyMappings: Record<string, Record<string, string>> = {
     [OS.MAC]: 'option',
     [OS.WIN]: 'alt',
     [OS.LINUX]: 'alt',
+    [OS.CROS]: 'alt',
+    [OS.OPENBSD]: 'alt',
   },
 };
 
@@ -82,21 +84,29 @@ export const keyLabels: Record<string, Record<string, string>> = {
     [OS.MAC]: '⌘',
     [OS.WIN]: 'ctrl',
     [OS.LINUX]: 'ctrl',
+    [OS.CROS]: 'ctrl',
+    [OS.OPENBSD]: 'ctrl',
   },
   [ModifierKey.ALT]: {
     [OS.MAC]: '⌥',
     [OS.WIN]: 'alt',
     [OS.LINUX]: 'alt',
+    [OS.CROS]: 'alt',
+    [OS.OPENBSD]: 'alt',
   },
   [ModifierKey.ENTER]: {
     [OS.MAC]: 'return',
     [OS.WIN]: 'enter',
     [OS.LINUX]: 'enter',
+    [OS.CROS]: 'enter',
+    [OS.OPENBSD]: 'enter',
   },
   [ModifierKey.SHIFT]: {
     [OS.MAC]: 'shift',
     [OS.WIN]: 'shift',
     [OS.LINUX]: 'shift',
+    [OS.CROS]: 'shift',
+    [OS.OPENBSD]: 'shift',
   },
 };
 
@@ -139,11 +149,15 @@ export const modifierKeysToClassMapping: Record<
     [OS.MAC]: 'cmd',
     [OS.WIN]: 'ctrl',
     [OS.LINUX]: 'ctrl',
+    [OS.CROS]: 'ctrl',
+    [OS.OPENBSD]: 'ctrl',
   },
   [ModifierKey.ALT]: {
     [OS.MAC]: 'option',
     [OS.WIN]: 'alt',
     [OS.LINUX]: 'alt',
+    [OS.CROS]: 'alt',
+    [OS.OPENBSD]: 'alt',
   },
 };
 
