@@ -1,7 +1,3 @@
-# <img src="https://user-images.githubusercontent.com/36832784/79633193-9ba0ea80-8181-11ea-8f83-893907cc6664.png" height="48" align="left"> zet
-
-> [Chrome extension](https://chrome.google.com/webstore/detail/zet/dpgmcnlebflbgacoghfpdmokolhljmbf) to add power-ups to Chrome.
-
 ## Highlights
 
 - Gives a familiar macOS Spotlight like interface to quickly jump between tabs across windows.
@@ -11,29 +7,6 @@
 - See the tabs which aren't audible now but were a while back. This is useful for times like when you want to reply to a message you got a couple of minutes back.
 - Highly accessible. Completely navigable usable just your keyboard.
 - Keyboard shortcuts for switching to a tab, toggling mute of a tab, jumping back to the last tab, etc.
-
-## Keyboard shortcuts
-
-| What?                                   | How?                                                                                                            |
-| --------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| Toggle zet's visibility                 | <kbd>⌘</kbd> + <kbd>shift</kbd> + <kbd>space</kbd>  <br/><kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>space</kbd> |
-| Close zet                               | <kbd>esc</kbd>                                                                                                  |
-| Toggle Audible Tabs Only view           | <kbd>⌘</kbd> + <kbd>S</kbd>  <br/><kbd>ctrl</kbd> + <kbd>S</kbd>                                               |
-| Jump back to previous tab               | <kbd>⌘</kbd> + <kbd>shift</kbd> + <kbd>U</kbd>  <br/><kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>U</kbd>         |
-| Jump to nth tab in the results          | <kbd>⌥</kbd> + <kbd>[1-9]</kbd>  <br/><kbd>alt</kbd> + <kbd>[1-9]</kbd></kbd>                                  |
-| Toggle mute for nth tab in the results  | <kbd>shift</kbd> + <kbd>[1-9]</kbd>                                                                             |
-| Navigate through the list of tabs       | <kbd>▲</kbd> / <kbd>▼</kbd>                                                                                     |
-| Jump to the highlighted tab in the list | <kbd>return</kbd>  <br/><kbd>enter</kbd>                                                                       |
-
-## Screenshots
-
-<img src="https://user-images.githubusercontent.com/36832784/81068702-6bd24080-8efe-11ea-9733-2d68d28c1029.png" width="512">
-
-_Search for an open tab_
-
-<img src="https://user-images.githubusercontent.com/36832784/81069861-1860f200-8f00-11ea-8f0c-8751fb1b587e.png" width="512">
-
-_Show currently and recently audible tabs_
 
 ## Setup for local development
 
@@ -57,9 +30,6 @@ In the root of the cloned repo run the following commands,
 
 After making any changes press the reload button on the extension card on _chrome://extensions_ page.
 
-## Created by
-
-- [Nandwana Abhishek](https://mobile.twitter.com/nandwana92)
 
 Build instructions:
 For development
